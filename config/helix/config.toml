@@ -1,13 +1,62 @@
 theme = "autumn"
 
 [editor]
+auto-format = true
 true-color = true
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
 
 [keys.normal]
 ret = ["insert_newline", "normal_mode"]
 backspace = "delete_char_backward"
 C-p = "save_selection"
 C-s = ":w"
+C-g = "normal_mode"
+C-n = "move_line_down"
+C-a = "goto_line_start"
+C-e = "goto_line_end_newline"
+C-k = "kill_to_line_end"
+A-f = "move_next_word_start"
+A-b = "move_prev_word_end"
+A-d = "delete_word_forward"
+A-backspace = "delete_word_backward"
 
 [keys.insert]
+C-g = "normal_mode"
+C-n = "move_line_down"
+C-p = "move_line_up"
+C-a = "goto_line_start"
+C-e = "goto_line_end_newline"
+C-k = "kill_to_line_end"
 C-s = [":w", "normal_mode"]
+A-f = "move_next_word_start"
+A-b = "move_prev_word_end"
+A-d = "delete_word_forward"
+A-backspace = "delete_word_backward"
+
+[keys.select]
+C-g = "normal_mode"
+C-a = "goto_line_start"
+C-e = "goto_line_end_newline"
+C-k = "kill_to_line_end"
+A-f = "move_next_word_start"
+A-b = "move_prev_word_end"
+A-d = "delete_word_forward"
+A-backspace = "delete_word_backward"
