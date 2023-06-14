@@ -1,1 +1,5 @@
 use-grammars = { except = [ "hare" ] }
+
+# [[language]]
+# name = "python"
+# auto-format = true
