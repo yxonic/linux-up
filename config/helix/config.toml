@@ -24,39 +24,71 @@ render = true
 enable = true
 
 [keys.normal]
+# emacs-like editing (should apply to all modes)
+C-v = "page_down"
+A-v = "page_up"
+C-p = "move_line_up"
+C-n = "move_line_down"
+C-f = "move_char_right"
+C-b = "move_char_left"
+A-f = "move_next_word_start"
+A-b = "move_prev_word_end"
+C-a = "goto_line_start"
+C-e = "goto_line_end_newline"
+C-u = "kill_to_line_start"
+C-k = "kill_to_line_end"
+C-d = "delete_char_forward"
+A-d = "delete_word_forward"
+C-g = "normal_mode"
+A-backspace = "delete_word_backward"
+# normal mode specific
 ret = ["insert_newline", "normal_mode"]
 backspace = "delete_char_backward"
-C-p = "save_selection"
 C-s = ":w"
-C-g = "normal_mode"
-C-n = "move_line_down"
-C-a = "goto_line_start"
-C-e = "goto_line_end_newline"
-C-k = "kill_to_line_end"
-A-f = "move_next_word_start"
-A-b = "move_prev_word_end"
-A-d = "delete_word_forward"
-A-backspace = "delete_word_backward"
+C-l = "save_selection" # previously C-s
 
 [keys.insert]
-C-g = "normal_mode"
-C-n = "move_line_down"
+# emacs-like editing (should apply to all modes)
+C-v = "page_down"
+A-v = "page_up"
 C-p = "move_line_up"
-C-a = "goto_line_start"
-C-e = "goto_line_end_newline"
-C-k = "kill_to_line_end"
-C-s = [":w", "normal_mode"]
+C-n = "move_line_down"
+C-f = "move_char_right"
+C-b = "move_char_left"
 A-f = "move_next_word_start"
 A-b = "move_prev_word_end"
+C-a = "goto_line_start"
+C-e = "goto_line_end_newline"
+C-u = "kill_to_line_start"
+C-k = "kill_to_line_end"
+C-d = "delete_char_forward"
 A-d = "delete_word_forward"
+C-g = "normal_mode"
 A-backspace = "delete_word_backward"
+# insert-mode specific
+C-s = [":w", "normal_mode"]
 
 [keys.select]
-C-g = "normal_mode"
-C-a = "goto_line_start"
-C-e = "goto_line_end_newline"
-C-k = "kill_to_line_end"
+# echoes normal mode
+# emacs-like editing (should apply to all modes)
+C-v = "page_down"
+A-v = "page_up"
+C-p = "move_line_up"
+C-n = "move_line_down"
+C-f = "move_char_right"
+C-b = "move_char_left"
 A-f = "move_next_word_start"
 A-b = "move_prev_word_end"
+C-a = "goto_line_start"
+C-e = "goto_line_end_newline"
+C-u = "kill_to_line_start"
+C-k = "kill_to_line_end"
+C-d = "delete_char_forward"
 A-d = "delete_word_forward"
+C-g = "normal_mode"
 A-backspace = "delete_word_backward"
+# select mode specific
+ret = ["insert_newline", "select_mode"]
+backspace = "delete_char_backward"
+C-s = ":w"
+C-l = "save_selection" # previously C-s
